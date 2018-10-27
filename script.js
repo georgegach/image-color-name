@@ -6,8 +6,10 @@
 
 window.onload = function () {
 
-    const colors = colorNameList.reduce((o, { name, hex }) => Object.assign(o, { [name]: hex }), {});
-    const nearest = nearestColor.from(colors);
+    window.colors = colorNameList.reduce((o, { name, hex }) => Object.assign(o, { [name]: hex }), {});
+    window.nearest = nearestColor.from(colors);
+
+    console.log('Globals: nearest(hex), colorNamedList[17530] and colors{17530}')
 
     var downFlag = false;
     var canvas = document.querySelector('#canvas')
