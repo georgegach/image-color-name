@@ -1,2 +1,2 @@
-# image-color-name
-Named color extractor from an image
+# imagecolor
+Extract a named color from an image

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Color Name Extractor</title>
+    <link rel="stylesheet" href="materialize.min.css">
+    <link rel="stylesheet" href="style.css">    
+    <script src="materialize.min.js"></script>
+    <script src="colornames.umd.js"></script>
+    <script src="nearestColor.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1>Image Color Name Extractor</h1>
+            <p>Sole purpose of this web app is to extract a named color from an image. It's relies on <a href="https://github.com/meodai/color-names">meodai/color-names</a> and <a href="https://github.com/dtao/nearest-color">dtao/nearest-color</a> libraries to name a color. Front-end developed by <a href="https://github.com/georgegach">George Gach</a>. Fork the repo at <a href="https://github.com/georgegach/imagecolor"></a> </p>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <div class="file-field input-field">
+                    <div class="btn indigo">
+                        <span>Choose an image</span>
+                        <input type="file" id='chooseBtn'>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" placeholder="default.jpg" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col s10">
+
+                <canvas id="canvas"></canvas>
+            </div>
+
+            <div class="col s2">
+                <div class="card">
+                    <div class="card-image">
+                        <div id='colorView'></div>
+                        <span class="card-title">Click on the image</span>
+                    </div>
+                    <div class="card-content">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>#</td>
+                                    <td id='Hex'></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>R</td>
+                                    <td id='R'></td>
+                                </tr>
+                                <tr>
+                                    <td>G</td>
+                                    <td id='G'></td>
+                                </tr>
+                                <tr>
+                                    <td>B</td>
+                                    <td id='B'></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>H</td>
+                                    <td id='H'></td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td id='S'></td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td id='V'></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>C</td>
+                                    <td id='C'></td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td id='M'></td>
+                                </tr>
+                                <tr>
+                                    <td>Y</td>
+                                    <td id='Y'></td>
+                                </tr>
+                                <tr>
+                                    <td>K</td>
+                                    <td id='K'></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
