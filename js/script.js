@@ -96,6 +96,11 @@ window.onload = function () {
         S.innerText = hsv.s
         V.innerText = hsv.v
 
+        if (hsv.v > 90)
+            Name.style.color = '#000'
+        else 
+            Name.style.color = '#fff'
+
         cmyk = toCMYK(cursorData)
         C.innerText = cmyk.c
         M.innerText = cmyk.m
@@ -132,7 +137,6 @@ window.onload = function () {
         ctx.arc(cross + pad, cross + pad, cross / 3, 0, 2 * Math.PI, false);
         ctx.stroke();
 
-        
         canvas.style.cursor = 'url(' + cursor.toDataURL() + ') ' + (pad + cross) + ' ' + (pad + cross) + ' , crosshair';
     }
 
