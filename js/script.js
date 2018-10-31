@@ -63,7 +63,7 @@ window.onload = function () {
             canvas.onpointermove = function (e) {
                 // Update cursor element position
                 cursor.style.left = e.pageX - (cursor.offsetWidth / 2) + 'px';
-	            cursor.style.top = e.pageY - (cursor.offsetHeight / 2) + 'px';
+                cursor.style.top = e.pageY - (cursor.offsetHeight / 2) + 'px';
 
                 cursorData = getColor(e)
                 var color = 'rgba(' + cursorData[0] + ',' + cursorData[1] + ',' + cursorData[2] + ',' + (cursorData[3] / 255) + ')';
@@ -78,10 +78,12 @@ window.onload = function () {
             canvas.onpointerdown = function (e) {
                 cursor.style.left = e.pageX - (cursor.offsetWidth / 2) + 'px';
                 cursor.style.top = e.pageY - (cursor.offsetHeight / 2) + 'px';
+                cursor.classList.toggle('touched')
                 downFlag = true
             };
 
             canvas.onpointerup = function(e) {
+                cursor.classList.toggle('touched')
                 downFlag = false
                 cursorData = getColor(e)
                 updatePanel(cursorData)
