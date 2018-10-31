@@ -6,4 +6,4 @@ Relies on <a href="https://github.com/meodai/color-names">meodai/color-names</a>
 Demo at: https://georgegach.github.io/image-color-name/
 <br>
 <br>
-![Demo](https://github.com/georgegach/image-color-name/raw/master/demo.gif)
+![Demo](https://github.com/georgegach/image-color-name/raw/master/assets/demo.gif)

@@ -31,7 +31,7 @@ window.onload = function () {
 
     button.onchange = function (e) {
         if (this.files.length == 0)
-            img.src = 'default.jpg'
+            img.src = '../assets/default.jpg'
         else
             img.src = URL.createObjectURL(this.files[0]);
 
