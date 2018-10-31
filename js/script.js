@@ -13,6 +13,7 @@ window.onload = function () {
 
     var downFlag = false;
     var canvas = document.querySelector('#canvas')
+    var cursor = document.querySelector('#cursor')
     var button = document.querySelector('#chooseBtn')
     var Hex = document.querySelector('#Hex')
     var R = document.querySelector('#R')
@@ -43,6 +44,7 @@ window.onload = function () {
 
             var getColor = function (e) {
                 var rect = canvas.getBoundingClientRect();
+                // console.log(e.pageY, rect.top, document.body.scrollTop)
                 var relX = e.pageX - (rect.left + document.body.scrollLeft);
                 var relY = e.pageY - (rect.top + document.body.scrollTop);
                 relX /= rect.width / canvas.width
@@ -51,24 +53,36 @@ window.onload = function () {
                 return cursorData
             };
 
+            canvas.onpointerenter = function (e) {
+                cursor.style.opacity = 1;
+            }
+
+            canvas.onpointerleave = function (e) {
+                cursor.style.opacity = 0;
+            }
+
             canvas.onpointermove = function (e) {
-                console.log("Pointer move")
+                // Update cursor element position
+                cursor.style.left = e.pageX - (cursor.offsetWidth / 2) + 'px';
+	            cursor.style.top = e.pageY - (cursor.offsetHeight / 2) + 'px';
 
                 cursorData = getColor(e)
                 var color = 'rgba(' + cursorData[0] + ',' + cursorData[1] + ',' + cursorData[2] + ',' + (cursorData[3] / 255) + ')';
-                makeCursor(color);
+                
+                cursor.style.borderColor = color
+                // makeCursor(color);
+
                 if (downFlag)
                     updatePanel(cursorData)
             };
 
             canvas.onpointerdown = function (e) {
-                console.log("Pointer down")
-
+                cursor.style.left = e.pageX - (cursor.offsetWidth / 2) + 'px';
+                cursor.style.top = e.pageY - (cursor.offsetHeight / 2) + 'px';
                 downFlag = true
             };
 
             canvas.onpointerup = function(e) {
-                console.log("Pointer up")
                 downFlag = false
                 cursorData = getColor(e)
                 updatePanel(cursorData)
@@ -108,6 +122,7 @@ window.onload = function () {
         K.innerText = cmyk.k
         colorView.style.backgroundColor = '#' + hex;
     }
+
 
     function makeCursor(color) {
         var cursor = document.createElement('canvas'),
