@@ -51,7 +51,9 @@ window.onload = function () {
                 return cursorData
             };
 
-            canvas.onmousemove = function (e) {
+            canvas.onpointermove = function (e) {
+                console.log("Pointer move")
+
                 cursorData = getColor(e)
                 var color = 'rgba(' + cursorData[0] + ',' + cursorData[1] + ',' + cursorData[2] + ',' + (cursorData[3] / 255) + ')';
                 makeCursor(color);
@@ -59,15 +61,19 @@ window.onload = function () {
                     updatePanel(cursorData)
             };
 
-            canvas.onmousedown = function (e) {
+            canvas.onpointerdown = function (e) {
+                console.log("Pointer down")
+
                 downFlag = true
             };
 
-            canvas.onmouseup = function(e) {
+            canvas.onpointerup = function(e) {
+                console.log("Pointer up")
                 downFlag = false
                 cursorData = getColor(e)
                 updatePanel(cursorData)
             }
+
 
         };
     }

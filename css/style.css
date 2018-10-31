@@ -1,4 +1,5 @@
 #canvas {
+    touch-action: none;
     background-color: #eee;
     width: 100%;
     /* height: 100vw/1.77; */
