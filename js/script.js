@@ -31,7 +31,7 @@ window.onload = function () {
 
     button.onchange = function (e) {
         if (this.files.length == 0)
-            img.src = 'https://raw.githubusercontent.com/georgegach/image-color-name/master/assets/default.jpg'
+            img.src = 'assets/default.jpg'
         else
             img.src = URL.createObjectURL(this.files[0]);
 
