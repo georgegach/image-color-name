@@ -132,7 +132,7 @@ window.onload = function () {
         ctx.arc(cross + pad, cross + pad, cross / 3, 0, 2 * Math.PI, false);
         ctx.stroke();
 
-        canvas.style.cursor = 'crosshair';
+        
         canvas.style.cursor = 'url(' + cursor.toDataURL() + ') ' + (pad + cross) + ' ' + (pad + cross) + ' , crosshair';
     }
 
