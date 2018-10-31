@@ -7,16 +7,17 @@
 }
 
 #cursor {
-	position: absolute;
+    position: absolute;
     touch-action: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100px;
-	height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
     border: 20px solid;
     border-color: #fff;
-	border-radius: 50%;
+    border-radius: 50%;
     pointer-events: none;
 }
 
@@ -65,3 +66,8 @@ td:first-child {
     width: 30%;
 }
 
+.temptitle {
+    opacity: 0.1;
+    top: -2em;
+    font-size: 0.3em;
+}

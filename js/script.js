@@ -44,9 +44,8 @@ window.onload = function () {
 
             var getColor = function (e) {
                 var rect = canvas.getBoundingClientRect();
-                // console.log(e.pageY, rect.top, document.body.scrollTop)
-                var relX = e.pageX - (rect.left + document.body.scrollLeft);
-                var relY = e.pageY - (rect.top + document.body.scrollTop);
+                var relX = e.pageX - (rect.left + window.scrollX);
+                var relY = e.pageY - (rect.top + window.scrollY);
                 relX /= rect.width / canvas.width
                 relY /= rect.height / canvas.height
                 cursorData = canvas.getContext('2d').getImageData(relX, relY, 1, 1).data;
